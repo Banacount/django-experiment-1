@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Variables */
+:root {
+    --color-bg: rgb(245, 251, 255);
+    --color-bg-1: rgb(240, 240, 240);
+    --color-text-1: rgb(23, 101, 145);
+    --color-border-1: rgb(120, 120, 120);
+}
+
+/* Root elements */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+}
+
+/* General elements */
+.all-imo-loaded {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 2.2rem;
+}
+.imo-contain {
+    width: 70%;
+    padding: 1rem;
+    box-sizing: border-box;
+    border: solid 0px transparent;
+    border-radius: 0.7rem;
+    box-shadow: 0px 0px 20px 1px var(--color-border-1);
+    user-select: none;
+    background-color: var(--color-bg-1);
+}
+.imo-user-name {
+    font-family: 'Special Gothic Expanded One';
+    font-style:  italic;
+    color: var(--color-text-1);
+    text-decoration: none;
+}
+.imo-user-name:hover {
+    text-decoration: underline;
+}
+.imo-text {
+    margin-top: 0.5rem;
+    margin-left: 0.2rem;
+    font-family: 'Ubuntu';
+}
+
+.post-btn {
+    padding: 0.7rem;
+    font-family: 'Ubuntu';
+    color: black;
+    border: solid 0px;
+    border-radius: 0.4rem;
+    box-shadow: 0px 0px 20px 1px var(--color-border-1);
+    text-decoration: none;
+    background-color: var(--color-bg-1);
+    transition: transform 0.3s linear;
+}
+.post-btn:hover {
+    transform: scale(1.1);
+}
+
+.create-contain {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 2rem;
+    align-self: center;
+    box-sizing: border-box;
+    border: solid 0px;
+    border-radius: 0.7rem;
+    box-shadow: 0px 0px 20px 1px var(--color-border-1);
+    background-color: var(--color-bg-1);
+}
+.create-contain .username-label {
+    width: 100%;
+    font-family: 'Special Gothic Expanded One';
+    text-align: left;
+    color: rgba(0, 0, 0, 0.7);
+}
+.create-contain .opinion-label {
+    width: 100%;
+    font-family: 'Special Gothic Expanded One';
+    text-align: left;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 1rem;
+}
+.create-contain #opinionText {
+    width: 100%;
+    font-family: 'Ubuntu';
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-border-1);
+    border-radius: 2px;
+    background-color: white;
+    outline: none;
+    resize: none;
+    transition: border-radius 0.4s linear;
+}
+.create-contain #opinionText:focus {
+    border-radius: 8px;
+    border-color: green;
+}
+.create-contain #nameInput {
+    width: 100%;
+    font-family: 'Ubuntu';
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-border-1);
+    border-radius: 2px;
+    background-color: white;
+    outline: none;
+    transition: border-radius 0.4s linear;
+}
+.create-contain #nameInput:focus {
+    border-radius: 8px;
+    border-color: green;
+}
+.create-contain #postImoBtn {
+    font-family: 'Ubuntu';
+    font-size: 1.1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid var(--color-border-1);
+    border-radius: 0.7rem;
+    margin-top: 0.4rem;
+    cursor: pointer;
+}
+
+.all-server-msg {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.3rem;
+    color: red;
+}
+.server-message {
+    font-family: 'Ubuntu';
+    font-size: 0.9rem;
+    text-align: right;
+    width: 70%;
+    margin-right: 2rem;
+}
+
+/* Login Page */
+.login-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    align-self: center;
+}
+.login-container .login-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 2rem;
+    border: solid 0px;
+    border-radius: 0.7rem;
+    box-shadow: 0px 0px 20px 1px var(--color-border-1);
+    background-color: var(--color-bg-1);
+}
+.login-container .errorlist {
+    order: 3;
+    list-style-type: none;
+    font-family: 'Ubuntu';
+    font-size: 0.7rem;
+    color: red;
+}
+.login-container label {
+    order: 1;
+    width: 100%;
+    display: block;
+    font-family: 'Special Gothic Expanded One';
+    font-size: 0.8rem;
+}
+.login-container input {
+    order: 1;
+    width: 100%;
+    display: block;
+    font-family: 'Ubuntu';
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    padding: 4px;
+    border: 0px solid var(--color-border-1);
+    border-bottom-width: 2px;
+    border-radius: 2px;
+    background-color: transparent;
+    outline: none;
+    transition: border-radius 0.4s linear;
+}
+.login-container input:focus {
+    border-radius: 8px;
+    border-color: green;
+}
+.login-container .submit-btn {
+    width: auto;
+    order: 2;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    margin-left: calc(100% - (1.4rem * 4));
+    margin-top: 1rem;
+    font-family: 'Ubuntu';
+    font-size: 0.8rem;
+    background-color: var(--color-bg-1);
+    border: 1px solid var(--color-border-1);
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.login-container #id_username {
+    margin-top: 0.1rem;
+    margin-bottom: 0.8rem;
+}
+.login-form .helptext {
+    font-family: 'Ubuntu';
+    font-size: 0.6rem;
+}

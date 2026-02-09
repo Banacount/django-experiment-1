@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="all-imo-loaded">
+{% for imo in Imos %}
+<div class="imo-contain">
+    <div class="imo-user-name">{{ imo.user_name }}</div>
+    <div class="imo-text">{{ imo.user_opinion }}</div>
+</div>
+{% endfor %}
+</div>
+<br><br>
+
+<div class="col-flex w-100p">
+    <div class="rev-row-flex w-70p self-center">
+        <a class="post-btn" href="/create-imo">Post your imo.</a>
+    </div>
+</div>
+
+{% endblock %}

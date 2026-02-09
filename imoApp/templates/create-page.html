@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Create Imo Page{% endblock %}
+
+{% block content %}
+<div>Create imo page hehe</div>
+
+<form method="POST" action="{% url 'create-imo-page' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="col-flex w-100p">
+    <div class="create-contain">
+
+    <input type="text" id="nameInput" value="{{ user.get_username }}" autocomplete="off" placeholder="Input here your username." minlength="4" maxlength="21" name="name" disabled>
+    <br>
+    <label for="opinion" class="opinion-label">Opinion</label>
+    <textarea name="opinion" id="opinionText" placeholder="Input here your opinion." rows="6" autocomplete=off></textarea>
+    <br>
+    <input type="submit" value="Post Imo" id="postImoBtn">
+
+    </div>
+    </div>
+</form>
+
+<div class="all-server-msg">
+{% if messages %}
+    {% for msg in messages %}
+        <div class="server-message">{{ msg }}</div>
+    {% endfor %}
+{% endif %}
+</div>
+
+<br><br>
+<div class="col-flex w-100p">
+    <div class="rev-row-flex w-70p self-center">
+        <a class="post-btn" href="/">Go back home.</a>
+    </div>
+</div>
+{% endblock %}

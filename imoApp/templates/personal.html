@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Personal{% endblock %}
+
+{% block content %}
+
+<div class="all-imo-loaded">
+{% for imo in Imos %}
+
+<div class="imo-contain">
+    <div class="imo-user-name">{{ imo.user_name }}</div>
+    <div class="imo-text">{{ imo.user_opinion }}</div>
+    <form method="POST" action="{% url 'user-personal-info' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" value="{{ imo.id }}" name="opinion-id">
+        <button name="delete-btn">Delete Opinion</button>
+    </form>
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

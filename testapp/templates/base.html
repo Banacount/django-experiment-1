@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testapp: {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <p>Header</p>
+    <div class="main-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <p>Footer</p>
+</body>
+<script src="{% static 'init_account.js' %}"></script>
+</html>

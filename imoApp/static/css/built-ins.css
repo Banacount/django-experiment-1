@@ -1,0 +1,22 @@
+
+.col-flex {
+    display: flex;
+    flex-direction: column;
+}
+.rev-row-flex {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.w-100p {
+    width: 100%;
+}
+.w-70p {
+    width: 70%;
+}
+.self-center {
+    align-self: center;
+    justify-self: center;
+}
+.bg-test {
+    background-color: red;
+}
