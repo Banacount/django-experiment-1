@@ -16,6 +16,33 @@ body {
 }
 
 /* General elements */
+.nav-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ubuntu';
+    gap: 1rem;
+}
+.nav-bar a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--color-text-1);
+    text-decoration: none;
+    transition: 0.1s linear transform;
+}
+.nav-bar a:hover {
+    transform: scale(0.9);
+}
+
+.logout-btn-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.logout-btn-form button {
+    margin-right: 1rem;
+}
+
 .all-imo-loaded {
     width: 100%;
     display: flex;
@@ -27,6 +54,7 @@ body {
 .imo-contain {
     width: 70%;
     padding: 1rem;
+    margin-top: 2rem;
     box-sizing: border-box;
     border: solid 0px transparent;
     border-radius: 0.7rem;
