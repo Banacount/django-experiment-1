@@ -14,12 +14,14 @@ else
   set shortmess=aoO
 endif
 badd +2 apps.py
-badd +2 views.py
-badd +0 urls.py
+badd +16 views.py
+badd +1 urls.py
 badd +1 static/js/func-register-page.js
-badd +57 static/css/main-style.css
-badd +18 templates/home.html
+badd +51 static/css/main-style.css
+badd +2 templates/home.html
 badd +23 templates/base.html
+badd +4 templates/login-page.html
+badd +16 templates/personal.html
 argglobal
 %argdel
 tabnew +setlocal\ bufhidden=wipe
@@ -39,12 +41,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 12) / 25)
+let s:l = 121 - ((19 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 0
+keepjumps 121
+normal! 09|
 tabnext
 edit urls.py
 argglobal
@@ -59,14 +61,14 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 5 - ((4 * winheight(0) + 12) / 25)
+let s:l = 6 - ((5 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 5
+keepjumps 6
 normal! 0
 tabnext
-edit templates/home.html
+edit templates/base.html
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -83,10 +85,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 86 + 66) / 132)
-exe 'vert 2resize ' . ((&columns * 45 + 66) / 132)
+exe 'vert 1resize ' . ((&columns * 78 + 66) / 132)
+exe 'vert 2resize ' . ((&columns * 53 + 66) / 132)
 argglobal
-balt templates/base.html
+balt templates/home.html
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -97,12 +99,12 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 2 - ((1 * winheight(0) + 12) / 25)
+let s:l = 23 - ((15 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2
-normal! 016|
+keepjumps 23
+normal! 0
 wincmd w
 argglobal
 if bufexists(fnamemodify("static/css/main-style.css", ":p")) | buffer static/css/main-style.css | else | edit static/css/main-style.css | endif
@@ -120,19 +122,19 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 57 - ((17 * winheight(0) + 12) / 25)
+let s:l = 51 - ((22 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 57
-normal! 020|
+keepjumps 51
+normal! 026|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 86 + 66) / 132)
-exe 'vert 2resize ' . ((&columns * 45 + 66) / 132)
+exe 'vert 1resize ' . ((&columns * 78 + 66) / 132)
+exe 'vert 2resize ' . ((&columns * 53 + 66) / 132)
 tabnext
 edit templates/base.html
 argglobal
-balt templates/home.html
+balt templates/login-page.html
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -143,13 +145,13 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 12) / 25)
+let s:l = 2 - ((1 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 011|
-tabnext 1
+keepjumps 2
+normal! 0
+tabnext 3
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

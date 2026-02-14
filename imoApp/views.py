@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
+from django.core.paginator import Paginator
 from .models import ImoItem
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
@@ -11,9 +12,12 @@ def home(request):
     if not request.user.is_authenticated:
         return redirect(loginPage)
 
-    print(request.user.get_username())
-    allImo = ImoItem.objects.all()
-    return render(request, "home.html", {'Imos': allImo})
+    allImo = ImoItem.objects.all().order_by('-id')
+    pagin = Paginator(allImo, 6)
+    where = request.GET.get('where_at')
+    imos = pagin.get_page(where)
+
+    return render(request, "home.html", {'Imos': allImo, 'perImo': imos})
 
 
 # Creation tab

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Personal{% endblock %}
+{% load static %}
 
 {% block content %}
 
@@ -12,7 +13,7 @@
     <form method="POST" action="{% url 'user-personal-info' %}" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="hidden" value="{{ imo.id }}" name="opinion-id">
-        <button name="delete-btn">Delete Opinion</button>
+        <button name="delete-btn" class="delete-btn"><img src="{% static 'imgs/delete-btn.svg'  %}"></button>
     </form>
 </div>
 
