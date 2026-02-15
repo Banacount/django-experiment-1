@@ -3,18 +3,22 @@
 {% load static %}
 
 {% block content %}
-<p>Register here</p>
 
 <div class="login-container">
 
-<form class="login-form" action="{% url 'register-page' %}" method="POST">
-    {% csrf_token %}
-    {{ register_form }}
-    <button class="submit-btn">Submit</button>
-</form>
+    <p>Register below</p>
+
+    <form class="login-form" action="{% url 'register-page' %}" method="POST">
+        {% csrf_token %}
+        {{ register_form }}
+        <button class="submit-btn">Submit</button>
+    </form>
+
+    <div class="nav-bar row-flex center-items m-top-1rem">
+        <a class="w-auto" href="{% url 'login-page' %}">Already have an account? Login</a>
+    </div>
 
 </div>
 
-<a href="{% url 'login-page' %}">Already have an account? Login</a>
 <script src="{% static 'js/func-register-page.js' %}"></script>
 {% endblock %}

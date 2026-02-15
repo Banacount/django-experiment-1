@@ -3,8 +3,9 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<p>Login here</p>
 <div class="login-container">
+
+    <p>Login below</p>
 
     <form class="login-form" action="{% url 'login-page' %}" method="POST">
         {% csrf_token %}
@@ -20,7 +21,10 @@
         </div>
     </form>
 
+<div class="nav-bar row-flex center-items m-top-1rem">
+    <a class="w-auto" href="{% url 'register-page' %}">Don't have an account? Register</a>
 </div>
-<a href="{% url 'register-page' %}">Don't have an account? Register</a>
+
+</div>
 <script src="{% static 'js/func-login-page.js' %}"></script>
 {% endblock %}
