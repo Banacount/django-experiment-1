@@ -1,0 +1,22 @@
+@media screen and (max-width: 600px) {
+    .imo-contain {
+        width: 90%;
+    }
+    .header-contain {
+        margin-top: 1rem;
+    }
+    .logout-btn-form {
+        position: fixed;
+        right: 1rem;
+        top: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header-contain {
+        margin-top: 1rem;
+    }
+    .header-contain p {
+        font-size: 2rem;
+    }
+}
